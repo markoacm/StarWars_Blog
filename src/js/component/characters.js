@@ -26,7 +26,7 @@ export const CharactersHome = () => {
 
                   <div>
                     <Link
-                      to={`/character/${character.id}`}
+                      to={`/character/${character.uid}`}
                       className="btn btn-success"
                     >
                       More Info..
@@ -37,7 +37,7 @@ export const CharactersHome = () => {
                         actions.saveFavorite(character);
                       }}
                     >
-                      <i class="fas fa-heart"></i>
+                      <i className="fas fa-heart"></i>
                     </button>
                   </div>
                 </div>

@@ -33,11 +33,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ vehicles: data.results });
           });
       },
-      getCharacter: (id) => {
-        fetch(`https://www.swapi.tech/api/people/${id}`)
+      getCharacter: (uid) => {
+        fetch(`https://www.swapi.tech/api/people/${uid}`)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data.result.properties);
             setStore({ character: data.result.properties });
           });
       },

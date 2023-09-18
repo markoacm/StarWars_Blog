@@ -27,7 +27,7 @@ export const VehiclesHome = () => {
                       More Info..
                     </Link>
                     <button className="btn btn-warning me-md-2">
-                      <i class="fas fa-heart"></i>
+                      <i className="fas fa-heart"></i>
                     </button>
                   </div>
                 </div>
