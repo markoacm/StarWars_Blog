@@ -1,45 +1,53 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+  return {
+    store: {
+      characters: [],
+      planets: [],
+      vehicles: [],
+      favorite: [],
+      character: [],
+      planet: [],
+      vehicle: [],
+    },
+    actions: {
+      loadCharacters: () => {
+        fetch("https://www.swapi.tech/api/people/")
+          .then((res) => res.json())
+          .then((data) => {
+            setStore({ characters: data.results });
+          });
+      },
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+      loadPlanets: () => {
+        fetch("https://www.swapi.tech/api/planets/")
+          .then((res) => res.json())
+          .then((data) => {
+            setStore({ planets: data.results });
+          });
+      },
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
+      loadVehicles: () => {
+        fetch("https://www.swapi.tech/api/vehicles/")
+          .then((res) => res.json())
+          .then((data) => {
+            setStore({ vehicles: data.results });
+          });
+      },
+      getCharacter: (id) => {
+        fetch(`https://www.swapi.tech/api/people/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data.result.properties);
+            setStore({ character: data.result.properties });
+          });
+      },
+
+      saveFavorite: (character) => {
+        console.log({ favorite: character });
+        setStore({ favorite: character });
+      },
+    },
+  };
 };
 
 export default getState;
