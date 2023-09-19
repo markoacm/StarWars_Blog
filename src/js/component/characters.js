@@ -23,23 +23,23 @@ export const CharactersHome = () => {
                   <h5 className="card-title text-white text-center">
                     {character.name}
                   </h5>
+                </div>
 
-                  <div>
-                    <Link
-                      to={`/character/${character.uid}`}
-                      className="btn btn-success"
-                    >
-                      More Info..
-                    </Link>
-                    <button
-                      className="btn btn-warning"
-                      onClick={() => {
-                        actions.saveFavorite(character);
-                      }}
-                    >
-                      <i className="fas fa-heart"></i>
-                    </button>
-                  </div>
+                <div className="position-relative p-3">
+                  <Link
+                    to={`/character/${character.uid}`}
+                    className="btn btn-success position-absolute bottom-0 start-0"
+                  >
+                    More Info..
+                  </Link>
+                  <button
+                    className="btn btn-warning position-absolute bottom-0 end-0"
+                    onClick={() => {
+                      actions.saveFavorite(character);
+                    }}
+                  >
+                    <i className="fas fa-heart"></i>
+                  </button>
                 </div>
               </div>
             );
