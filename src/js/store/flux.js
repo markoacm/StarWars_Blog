@@ -41,6 +41,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
+      getPlanet: (uid) => {
+        fetch(`https://www.swapi.tech/api/planets/${uid}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setStore({ planet: data.result.properties });
+          });
+      },
+
+      getVehicle: (uid) => {
+        fetch(`https://www.swapi.tech/api/vehicles/${uid}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setStore({ vehicle: data.result.properties });
+          });
+      },
+
       saveFavorite: (character) => {
         console.log({ favorite: character });
         setStore({ favorite: character });

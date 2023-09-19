@@ -24,7 +24,10 @@ export const PlanetsHome = () => {
                     {planet.name}
                   </h5>
                   <div>
-                    <Link to="" className="btn btn-success">
+                    <Link
+                      to={`/planet/${planet.uid}`}
+                      className="btn btn-success"
+                    >
                       More Info..
                     </Link>
                     <button className="btn btn-warning me-md-2">

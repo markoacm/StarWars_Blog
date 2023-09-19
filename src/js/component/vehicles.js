@@ -23,7 +23,10 @@ export const VehiclesHome = () => {
                   </h5>
 
                   <div>
-                    <Link to="" className="btn btn-success">
+                    <Link
+                      to={`/vehicle/${vehicle.uid}`}
+                      className="btn btn-success"
+                    >
                       More Info..
                     </Link>
                     <button className="btn btn-warning me-md-2">

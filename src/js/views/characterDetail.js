@@ -13,31 +13,31 @@ export const CharacterDetail = () => {
 
   return (
     <div className="bg-black">
-      <div className="col-4 mx-auto">
-        {store.character ? (
-          <div className="card bg-dark">
-            <img
-              src={`https://starwars-visualguide.com/assets/img/characters/${params.characterId}.jpg`}
-              className="card-img-top"
-              alt={store.character.name}
-            />
-            <div className="card-body text-light">
-              <h5 className="card-title">Name: {store.character.name}</h5>
-              <ul>
-                <li>Birth Year: {store.character.birth_year}</li>
-                <li>Weight: {store.character.mass}</li>
-                <li>Height: {store.character.height}</li>
-                <li>Gender: {store.character.gender}</li>
-                <li>Eye Color: {store.character.eye_color}</li>
-                <li>Hair Color: {store.character.hair_color}</li>
-                <li>Eye Color: {store.character.eye_color}</li>
-              </ul>
+      {store.character ? (
+        <div className="text-center ">
+          <img
+            src={`https://starwars-visualguide.com/assets/img/characters/${params.characterId}.jpg`}
+            alt={store.character.name}
+          />
+
+          <div className="col-10 p-2 mx-auto">
+            <div className="row d-flex justify-content-center text-light bg-dark">
+              <h5 className="m-3">Name: {store.character.name}</h5>
+
+              <div class="hstack col-md-8 gap-8 pb-3">
+                <div class="p-2">Birth Year: {store.character.birth_year}</div>
+                <div class="p-2">Weight: {store.character.mass}</div>
+                <div class="p-2">Height: {store.character.height}</div>
+                <div class="p-2">Gender: {store.character.gender}</div>
+                <div class="p-2">Eye Color: {store.character.eye_color}</div>
+                <div class="p-2">Hair Color: {store.character.hair_color}</div>
+              </div>
             </div>
           </div>
-        ) : (
-          <h3>Loading...</h3>
-        )}
-      </div>
+        </div>
+      ) : (
+        <h3>Loading...</h3>
+      )}
     </div>
   );
 };

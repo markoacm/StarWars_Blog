@@ -6,6 +6,8 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import { CharacterDetail } from "./views/characterDetail";
+import { PlanetDetail } from "./views/planetDetail";
+import { VehicleDetail } from "./views/vehicleDetail";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -28,6 +30,8 @@ const Layout = () => {
               path="/character/:characterId"
               element={<CharacterDetail />}
             />
+            <Route path="planet/:planetId" element={<PlanetDetail />} />
+            <Route path="vehicle/:vehicleId" element={<VehicleDetail />} />
 
             <Route path="/demo" element={<Demo />} />
             <Route path="/single/:theid" element={<Single />} />
