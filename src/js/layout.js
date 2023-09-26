@@ -3,8 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+
 import { CharacterDetail } from "./views/characterDetail";
 import { PlanetDetail } from "./views/planetDetail";
 import { VehicleDetail } from "./views/vehicleDetail";
