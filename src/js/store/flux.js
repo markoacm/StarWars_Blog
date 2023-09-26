@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       planet: [],
       vehicle: [],
     },
+
     actions: {
       loadCharacters: () => {
         fetch("https://www.swapi.tech/api/people/")
@@ -57,9 +58,24 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-      saveFavorite: (character) => {
-        console.log({ favorite: character });
-        setStore({ favorite: character });
+      saveFavorite: (item) => {
+        const store = getStore();
+
+        const favorites = store.favorite.includes(item);
+
+        if (!favorites) {
+          const newFavorites = [...store.favorite, item];
+          console.log({ favorite: newFavorites });
+          setStore({ favorite: newFavorites });
+        }
+      },
+
+      removeFavorite: (index) => {
+        const store = getStore();
+        const newFavorites = store.favorite.filter(
+          (item, currentIndex) => currentIndex != index
+        );
+        setStore({ favorite: newFavorites });
       },
     },
   };

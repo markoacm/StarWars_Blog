@@ -20,7 +20,7 @@ export const VehicleDetail = () => {
           />
           <div className="col-10 p-2 mx-auto">
             <div className="row d-flex justify-content-center text-light bg-dark">
-              <h5 className="  m-3">Name: {store.vehicle.name}</h5>
+              <h5 className="m-3 text-warning">Name: {store.vehicle.name}</h5>
 
               <div class="hstack gap-3 pb-3">
                 <div class="p-2">Model: {store.vehicle.model}</div>

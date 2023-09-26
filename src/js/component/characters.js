@@ -34,9 +34,8 @@ export const CharactersHome = () => {
                   </Link>
                   <button
                     className="btn btn-warning position-absolute bottom-0 end-0"
-                    onClick={() => {
-                      actions.saveFavorite(character);
-                    }}
+                    onClick={() => actions.saveFavorite(character.name)}
+                    disabled={store.favorite.includes(character.name)}
                   >
                     <i className="fas fa-heart"></i>
                   </button>

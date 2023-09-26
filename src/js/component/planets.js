@@ -31,7 +31,11 @@ export const PlanetsHome = () => {
                   >
                     More Info..
                   </Link>
-                  <button className="btn btn-warning position-absolute bottom-0 end-0">
+                  <button
+                    className="btn btn-warning position-absolute bottom-0 end-0"
+                    onClick={() => actions.saveFavorite(planet.name)}
+                    disabled={store.favorite.includes(planet.name)}
+                  >
                     <i className="fas fa-heart"></i>
                   </button>
                 </div>

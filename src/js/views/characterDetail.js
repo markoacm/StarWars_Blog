@@ -22,7 +22,7 @@ export const CharacterDetail = () => {
 
           <div className="col-10 p-2 mx-auto">
             <div className="row d-flex justify-content-center text-light bg-dark">
-              <h5 className="m-3">Name: {store.character.name}</h5>
+              <h5 className="m-3 text-warning">Name: {store.character.name}</h5>
 
               <div class="hstack col-md-8 gap-8 pb-3">
                 <div class="p-2">Birth Year: {store.character.birth_year}</div>

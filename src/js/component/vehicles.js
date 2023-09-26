@@ -30,7 +30,11 @@ export const VehiclesHome = () => {
                   >
                     More Info..
                   </Link>
-                  <button className="btn btn-warning position-absolute bottom-0 end-0">
+                  <button
+                    className="btn btn-warning position-absolute bottom-0 end-0"
+                    onClick={() => actions.saveFavorite(vehicle.name)}
+                    disabled={store.favorite.includes(vehicle.name)}
+                  >
                     <i className="fas fa-heart"></i>
                   </button>
                 </div>
